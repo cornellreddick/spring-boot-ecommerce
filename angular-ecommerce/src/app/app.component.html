@@ -18,8 +18,8 @@
             Products
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Books</a></li>
-            <li><a class="dropdown-item" href="#">Coffee Mugs</a></li>
+            <li><a class="dropdown-item" routerLink="/category/1" routerLinkActive="active-link">Books</a></li>
+            <li><a class="dropdown-item" routerLink="/category/2" routerLinkActive="active-link">Coffee Mugs</a></li>
             <li><a class="dropdown-item" href="#">Mouse Pads</a></li>
             <li><a class="dropdown-item" href="#">Coffee Mugs</a></li>
 <!--            <li><hr class="dropdown-divider"></li>-->
@@ -65,7 +65,9 @@
 
 <!-- Main Content-->
 <div class="container">
-  <app-product-list></app-product-list>
+  <router-outlet></router-outlet>
+<!--  Removing this to use the Router-Oulet instead -->
+<!--  <app-product-list></app-product-list>-->
 </div>
 
 <!-- End Main Content-->
