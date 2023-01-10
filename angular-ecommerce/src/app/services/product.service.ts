@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../common/product';
 import { map } from 'rxjs/operators';
+import { ProductCategory } from 'src/app/common/product-category';
 
 @Injectable({
   providedIn: 'root'
@@ -43,3 +44,4 @@ interface GetResponseProductCategory {
   _embedded: {
     productCategory: ProductCategory[];
   }
+}

@@ -22,21 +22,15 @@
             <li><a class="dropdown-item" routerLink="/category/2" routerLinkActive="active-link">Coffee Mugs</a></li>
             <li><a class="dropdown-item" href="#">Mouse Pads</a></li>
             <li><a class="dropdown-item" href="#">Coffee Mugs</a></li>
-<!--            <li><hr class="dropdown-divider"></li>-->
-<!--            <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
-<!--        </li>-->
+       <li class="nav-item">
+         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+       </li>
       </ul>
-<!--      <form class="d-flex" onsubmit="return false;" method="GET">-->
-<!--        <input class="form-control-outline-dark" type="text" name="search"-->
-<!--               placeholder="Search for data ..." />-->
-<!--        <button class="au-btn-submit" type="submit">-->
-<!--          Search-->
-<!--        </button>-->
-<!--      </form>-->
+
       <form class="d-flex" onsubmit="return false;" method="GET">
         <input class="form-control-outline-dark" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-dark" type="submit">Search</button>
@@ -62,14 +56,8 @@
   </div>
 </header>
 <!-- End Header-->
-
 <!-- Main Content-->
-<div class="container">
-  <router-outlet></router-outlet>
-<!--  Removing this to use the Router-Oulet instead -->
-<!--  <app-product-list></app-product-list>-->
-</div>
-
+<app-product-category-menu></app-product-category-menu>
 <!-- End Main Content-->
 
 
