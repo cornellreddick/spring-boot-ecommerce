@@ -6,6 +6,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <app-product-category-menu></app-product-category-menu>
+    <app-search></app-search>
+
+    <button class="btn btn-outline-dark" type="submit">
+      <i class="bi-cart-fill me-1"></i>
+      Cart
+      <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+    </button>
   </div>
 </nav>
 <!-- End Navigation-->
@@ -21,12 +28,9 @@
   </div>
 </header>
 <!-- End Header-->
-
 <!-- Main Content-->
 <div class="container">
   <router-outlet></router-outlet>
-<!--  Removing this to use the Router-Oulet instead -->
-<!--  <app-product-list></app-product-list>-->
 </div>
 
 <!-- End Main Content-->

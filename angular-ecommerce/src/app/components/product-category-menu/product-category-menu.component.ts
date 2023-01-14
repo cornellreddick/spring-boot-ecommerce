@@ -28,4 +28,3 @@ export class ProductCategoryMenuComponent implements OnInit {
   }
 
 }
-
