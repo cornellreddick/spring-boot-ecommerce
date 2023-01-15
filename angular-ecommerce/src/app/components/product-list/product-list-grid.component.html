@@ -3,10 +3,14 @@
       <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
         <div *ngFor="let tempProduct of products" class="col mb-5">
           <div class="card h-100">
+            <a routerLink="/products/{{ tempProduct.id }}">
             <img href="product-detail.html" src="{{ tempProduct.imageUrl }}" class="card-img-top" >
+            </a>
             <div class="card-body p-4">
               <div class="text-center">
+<!--                <a routerLink="/products/{{ tempProduct.id }}">-->
                 <h5 class="fw-bolder"> {{ tempProduct.name }}</h5>
+<!--                </a>-->
               </div>
             </div>
             <div class="card-body p-4">
