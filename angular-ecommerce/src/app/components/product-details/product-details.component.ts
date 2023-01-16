@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/common/product';
 import { ProductService } from 'src/app/services/product.service';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-details',
@@ -9,25 +10,27 @@ import { ActivatedRoute} from '@angular/router';
 })
 export class ProductDetailsComponent implements OnInit {
 
-product!: Product;
+  product!: Product;
 
-  constructor(private productService: ProductService, private route: ActivatedRoute) { }
+  constructor(private productService: ProductService,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
-  this.route.paramMap.subscribe(() +> {
-    this.handleProductDetails();
+    this.route.paramMap.subscribe(() => {
+      this.handleProductDetails();
+    })
   }
 
-  handleProductDetails(){
-    // get the "id" param string. convert string to number usinmg the "+" symbol
-   const theProductId: number = +this.route.snapshot.paramMap.get('id')!;
+  handleProductDetails() {
+
+    // get the "id" param string. convert string to a number using the "+" symbol
+    const theProductId: number = +this.route.snapshot.paramMap.get('id')!;
 
     this.productService.getProduct(theProductId).subscribe(
       data => {
-        this.product = product;
-        }
-      )
+        this.product = data;
+      }
+    )
   }
 
 }
