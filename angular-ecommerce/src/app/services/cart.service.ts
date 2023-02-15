@@ -32,7 +32,40 @@ totalQuantity: Subject<number> = new Subject<number>();
   alreadyInCart = (existingCartItem!== undefined);
   }
 
+  if(alreadyInCart) {
+  existingCartItem.quantity++;
+  }else{
+  // just add the item to the array
+  this.cartItems.push(theCartItem);
+  }
 
+  // compute cart total price and total quantity
+  this.computeCartTotal();
+  }
+  computeCartTotal(){
+  let totalPriceValue = number = 0;
+  let totalQuantityValue = number = 0;
+
+  for(let currentCartItem of this.cartItems){
+    totalPriceValue += currentCartItem.quantity * currentCartItem.unitPrice;
+    totalQuantityValue += currentCartItem.quantity;
+  }
+  // publicsh the new values .. all subscriber will recieve the new data.
+  this.totalPrice.next(totalPriceValue);
+  this.totalQuantity.next(totalQuantityValue);
+
+  // log cart data just for debug
+  this.logCartData(totalPriceValue, totalQuantityValue);
+  }
+  logCartData(totalPriceValue: number, totalQuantityValue: number){
+  console.log("Contents of the cart");
+  for(let tempCartItem of this.cartItems){
+    const subTotalTotalPrice = tempCartItem.quantity * tempCartItem.unitPrice;
+    console.log(`name: ${tempCartItem.name}, quantity: ${tempCartItem.quantity}, unitPrice: ${tempCartItem.unitPrice}, subTotalPrice: ${subTotalPrice}`);
+  }
+
+  console.log(`totalPrice: , ${totalPriceValue.toFixed(2)}, totalQuantity: ${totalQuantityValue.toFixed(2)}`);
+  console.log(`____________________________________`);
 
   }
 }
