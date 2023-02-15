@@ -19,12 +19,12 @@ totalQuantity: number = 0;
 
 updateCartStatus(){
   this.cartService.totalPrice.subscribe(
-    data => this.totalPrice = data;
-  );
+    data => this.totalPrice = data
+    );
 
-  this.cartService.totalQuantity.subscribe(
-     data => this.totalQuantity = data;
-   );
+    this.cartService.totalQuantity.subscribe(
+     data => this.totalQuantity = data
+    );
 
-}
+  }
 }
