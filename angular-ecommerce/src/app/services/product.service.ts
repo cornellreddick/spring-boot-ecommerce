@@ -10,9 +10,12 @@ import { ProductCategory } from '../common/product-category';
 })
 export class ProductService {
 
-  private baseUrl = 'http://localhost:8080/api/products';
+//   private ROOT_URL = 'full-stack-ecommerce.coziao0ku3jc.us-east-1.rds.amazonaws.com';
+   private ROOT_URL = 'http://localhost:8080';
 
-  private categoryUrl = 'http://localhost:8080/api/product-category';
+  private baseUrl = this.ROOT_URL+'/api/products';
+
+  private categoryUrl = this.ROOT_URL+'/api/product-category';
 
   constructor(private httpClient: HttpClient) { }
 
