@@ -34,4 +34,8 @@ data => this.totalQuantity = data
 // compute cart total price and quantity
 this.cartService.computeCartTotals();
 }
+
+incrementQuantity(theCartItem: CartItem){
+this.cartService.addToCart(theCartItem);
+}
 }
