@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
+
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -7,13 +8,17 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CheckoutComponent implements OnInit {
 
-  checkoutFormGroup: FormGroup;
+  checkoutFormGroup!: FormGroup;
+
+  totalPrice: number = 0;
+  totalQuantity: number = 0;
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-  this.checkoutFormGroup = this.formBuilder.group({
-    customer: this.formBuilder.group({
+
+    this.checkoutFormGroup = this.formBuilder.group({
+      customer: this.formBuilder.group({
       firstName: [''],
       lastName: [''],
       email: [''],
