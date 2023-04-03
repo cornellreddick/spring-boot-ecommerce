@@ -166,51 +166,63 @@
           </div>
         </div>
       <!--  Credit Card      -->
-        <div formGroupName="creditCard" class="form-area">
+        <div formGroupName="billingAddress" class="form-area">
           <h3>Credit Card</h3>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-1"><label>Card Type</label></div>
+            <div class="col-md-11">
               <div class="input-space">
-                <input formControlName="cardType" type="text" placeholder="Credit Card Type">
+                <select formControlName="cardType">
+                  <option>Visa</option>
+                  <option>Master</option>
+                </select>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-1"><label>Name on Card</label></div>
+            <div class="col-md-11">
               <div class="input-space">
-                <input formControlName="nameOnCard"  type="text" placeholder="Name on the Card">
+                <input formControlName="nameOnCard" type="text">
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-1"><label>Card Number</label></div>
+            <div class="col-md-11">
               <div class="input-space">
-                <input formControlName="cardNumber"  type="text" placeholder="Credit Card Number">
+                <input formControlName="cardNumber" type="text">
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-1"><label>Security Code</label></div>
+            <div class="col-md-11">
               <div class="input-space">
-                <input formControlName="securityCode"  type="text" placeholder="Security Code">
+                <input formControlName="securityCode" type="text">
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-1"><label>Expiration Month</label></div>
+            <div class="col-md-11">
               <div class="input-space">
-                <input formControlName="expirationMonth"  type="text" placeholder="Expiration Month">
+                <select formControlName="experationMonth">
+                  <option>TO DO</option>
+                </select>
               </div>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-1"><label>Expiration Year</label></div>
+            <div class="col-md-11">
               <div class="input-space">
-                <input formControlName="expirationYear"  type="text" placeholder="Expiration Year">
+                <select formControlName="expirationYear">
+                  <option>TO DO</option>
+                </select>
               </div>
             </div>
           </div>
-
         </div>
         <!--   Submit button     -->
         <div class="text-center">
