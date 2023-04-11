@@ -65,7 +65,12 @@ export class CheckoutComponent implements OnInit {
 
   //populate credit card years
 
-
+  this.shopFormService.getCreditCardYears().subscribe(
+    data => {
+      console.log("Retrieved credit card years: " + JSON.stringify(data));
+      this.creditCardYears = data;
+    }
+  );
 
   }
 
