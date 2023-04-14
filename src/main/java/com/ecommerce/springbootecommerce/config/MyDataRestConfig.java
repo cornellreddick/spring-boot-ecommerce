@@ -32,20 +32,19 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         HttpMethod [] theUnsupportedAction = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE};
 
-        // disable HTTP methods for Product: PUT, POST and DELETE
-        config.getExposureConfiguration()
-                .forDomainType(Product.class)
-                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedAction))
-                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedAction));
-
         // disable HTTP methods for ProductCategory: PUT, POST and DELETE
-        config.getExposureConfiguration()
-                .forDomainType(ProductCategory.class)
-                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedAction))
-                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedAction));
+        disableHttpMethods(ProductCategory.class, config, theUnsupportedAction);
+        disableHttpMethods(Product.class, config, theUnsupportedAction);
 
         // call an internal helper method to help expose the ids
         exposeIds(config);
+    }
+
+    private void disableHttpMethods(Class productCat, RepositoryRestConfiguration config, HttpMethod[] theUnsupportedAction) {
+        config.getExposureConfiguration()
+                .forDomainType(productCat)
+                .withItemExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedAction))
+                .withCollectionExposure((metdata, httpMethods) -> httpMethods.disable(theUnsupportedAction));
     }
 
     private void exposeIds(RepositoryRestConfiguration config) {
