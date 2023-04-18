@@ -16,6 +16,8 @@ export class CheckoutComponent implements OnInit {
   creditCardYears: number[] = [];
   creditCardMonths: number[] = [];
 
+  countries: Country[] = [];
+
   constructor(private formBuilder: FormBuilder, private shopFormService: ShopFormService) { }
 
   ngOnInit(): void {
@@ -72,6 +74,13 @@ export class CheckoutComponent implements OnInit {
     }
   );
 
+    // populate country
+    this.shopFormService.getCountries().subscribe(
+      data => {
+        console.log("Retrieved countries: " + JSON.stringify(data));
+        this.countries = data;
+      }
+    );
   }
 
     copyShippingAddressToBillingAddress(event) {
