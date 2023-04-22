@@ -114,10 +114,12 @@
             <div class="col-md-1"><label>City</label></div>
             <div class="col-md-11">
               <div class="input-space">
-                <select formControlName="country">
-                  <option *ngFor="let country of countries" [ngValue]="country">
-                    {{ country.name }}
-                  </option>
+                <select formControlName="city">
+                  <option>TODO</option>
+                  <option></option>
+                  <option></option>
+                  <option></option>
+                  <option></option>
                 </select>
               </div>
             </div>
@@ -141,11 +143,9 @@
             <div class="col-md-11">
               <div class="input-space">
                 <select formControlName="country">
-                  <option>TODO</option>
-                  <option></option>
-                  <option></option>
-                  <option></option>
-                  <option></option>
+                  <option *ngFor="let country of countries" [ngValue]="country">
+                    {{ country.name }}
+                  </option>
                 </select>
               </div>
             </div>
