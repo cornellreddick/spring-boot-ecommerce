@@ -153,7 +153,7 @@ getStates(formGroupName: string){
     }
 
     // select first item by default
-    formGroup.get('states').setValue(data[0]);
+    formGroup.get('state').setValue(data[0]);
  }
 
  );
