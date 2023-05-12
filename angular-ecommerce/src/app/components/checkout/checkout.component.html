@@ -271,6 +271,14 @@
                   <option>Visa</option>
                   <option>Master</option>
                 </select>
+                <div *ngIf="creditCardType.invalid && (creditCardType.dirty || creditCardType.touched)" class="alert alert-danger">
+                  <div *ngIf="creditCardType.errors.required || creditCardType.errors.notOnlyWhitespace">
+                    Credit Card Type is required
+                  </div>
+                  <div *ngIf="creditCardType.errors.minlength">
+                    Credit Card Type must be at least 2 characters long
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -279,6 +287,14 @@
             <div class="col-md-11">
               <div class="input-space">
                 <input formControlName="nameOnCard" type="text">
+                <div *ngIf="creditCardNameOnCard.invalid && (creditCardNameOnCard.dirty || creditCardNameOnCard.touched)" class="alert alert-danger">
+                  <div *ngIf="creditCardNameOnCard.errors.required || creditCardNameOnCard.errors.notOnlyWhitespace">
+                    Name on Card Type is required
+                  </div>
+                  <div *ngIf="creditCardNameOnCard.errors.minlength">
+                    Name on Card Type must be at least 2 characters long
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -287,6 +303,14 @@
             <div class="col-md-11">
               <div class="input-space">
                 <input formControlName="cardNumber" type="text">
+                <div *ngIf="creditCardNumber.invalid && (creditCardNumber.dirty || creditCardNumber.touched)" class="alert alert-danger">
+                  <div *ngIf="creditCardNumber.errors.required || creditCardNumber.errors.notOnlyWhitespace">
+                    Card Number Type is required
+                  </div>
+                  <div *ngIf="creditCardNumber.errors.minlength">
+                    Card Number Type must be 16 digits long
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -295,6 +319,14 @@
             <div class="col-md-11">
               <div class="input-space">
                 <input formControlName="securityCode" type="text">
+                <div *ngIf="creditCardSecurityCode.invalid && (creditCardSecurityCode.dirty || creditCardSecurityCode.touched)" class="alert alert-danger">
+                  <div *ngIf="creditCardSecurityCode.errors.required || creditCardSecurityCode.errors.notOnlyWhitespace">
+                    Security Code is required
+                  </div>
+                  <div *ngIf="creditCardSecurityCode.errors.minlength">
+                    Security Code must be 3 digits long
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -307,6 +339,14 @@
                     {{ month }}
                   </option>
                 </select>
+<!--                <div *ngIf="creditCardExpirationMonth.invalid && (creditCardExpirationMonth.dirty || creditCardExpirationMonth.touched)" class="alert alert-danger">-->
+<!--                  <div *ngIf="creditCardExpirationMonth.errors.required || creditCardExpirationMonth.errors.notOnlyWhitespace">-->
+<!--                    Expiration Month is required-->
+<!--                  </div>-->
+<!--                  <div *ngIf="creditCardExpirationMonth.errors.minlength">-->
+<!--                    Expiration Month must be at least 2 characters long-->
+<!--                  </div>-->
+<!--                </div>-->
               </div>
             </div>
           </div>
@@ -319,6 +359,14 @@
                     {{ year }}
                   </option>
                 </select>
+<!--                <div *ngIf="creditCardExpirationYear.invalid && (creditCardExpirationYear.dirty || creditCardExpirationYear.touched)" class="alert alert-danger">-->
+<!--                  <div *ngIf="creditCardExpirationYear.errors.required || creditCardExpirationYear.errors.notOnlyWhitespace">-->
+<!--                    Expiration Year is required-->
+<!--                  </div>-->
+<!--                  <div *ngIf="creditCardExpirationYear.errors.minlength">-->
+<!--                    Expiration Year must be at least 2 characters long-->
+<!--                  </div>-->
+<!--                </div>-->
               </div>
             </div>
           </div>
