@@ -41,11 +41,11 @@ export class CheckoutComponent implements OnInit {
       zipCode: new FormControl('', [Validators.required, Validators.minLength(2), ShopValidators.notOnlyWhitespace]),
     }),
     billingAddress: this.formBuilder.group({
-        street: [''],
-        country: [''],
-        city: [''],
-        state: [''],
-        zipCode: [''],
+       street: new FormControl('', [Validators.required, Validators.minLength(2), ShopValidators.notOnlyWhitespace]),
+       country: new FormControl('', [Validators.required]),
+       city: new FormControl('', [Validators.required, Validators.minLength(2), ShopValidators.notOnlyWhitespace]),
+       state: new FormControl('', [Validators.required]),
+       zipCode: new FormControl('', [Validators.required, Validators.minLength(2), ShopValidators.notOnlyWhitespace]),
     }),
     creditCard: this.formBuilder.group({
         cardType: [''],
@@ -88,15 +88,23 @@ export class CheckoutComponent implements OnInit {
     );
   }
 
+//     Customer
     get firstName() { return this.checkoutFormGroup.get('customer.firstName'); }
     get lastName() { return this.checkoutFormGroup.get('customer.lastName'); }
     get emailAddress() { return this.checkoutFormGroup.get('customer.emailAddress'); }
+//     Shipping Address
+     get shippingAddressStreet() { return this.checkoutFormGroup.get('billingAddress.street'); }
+     get shippingAddressCity() { return this.checkoutFormGroup.get('billingAddress.city'); }
+     get shippingAddressState() { return this.checkoutFormGroup.get('billingAddress.state'); }
+     get shippingAddressCountry() { return this.checkoutFormGroup.get('billingAddress.country'); }
+     get shippingAddressZipCode() { return this.checkoutFormGroup.get('billingAddress.zipCode'); }
+//      Billing Address
+     get billingAddressStreet() { return this.checkoutFormGroup.get('billingAddress.street'); }
+     get billingAddressCity() { return this.checkoutFormGroup.get('billingAddress.city'); }
+     get billingAddressState() { return this.checkoutFormGroup.get('billingAddress.state'); }
+     get billingAddressCountry() { return this.checkoutFormGroup.get('billingAddress.country'); }
+     get billingAddressZipCode() { return this.checkoutFormGroup.get('billingAddress.zipCode'); }
 
-     get shippingAddressStreet() { return this.checkoutFormGroup.get('shippingAddress.street'); }
-     get shippingAddressCity() { return this.checkoutFormGroup.get('shippingAddress.city'); }
-     get shippingAddressState() { return this.checkoutFormGroup.get('shippingAddress.state'); }
-     get shippingAddressCountry() { return this.checkoutFormGroup.get('shippingAddress.country'); }
-     get shippingAddressZipCode() { return this.checkoutFormGroup.get('shippingAddress.zipCode'); }
 
     copyShippingAddressToBillingAddress(event) {
 
