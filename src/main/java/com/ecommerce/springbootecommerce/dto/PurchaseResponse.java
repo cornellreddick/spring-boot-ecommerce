@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class PurchaseResponse {
 
-    private String orderTackingNumber;
+    private final String orderTackingNumber;
 }
