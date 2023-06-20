@@ -42,12 +42,12 @@
             <div class="col-md-1"><label>Email Address</label></div>
             <div class="col-md-11">
               <div class="input-space">
-                <input formControlName="emailAddress"  type="text" >
-                <div *ngIf="emailAddress.invalid && (emailAddress.dirty || emailAddress.touched)" class="alert alert-danger">
-                  <div *ngIf="emailAddress.errors.required">
+                <input formControlName="email"  type="text" >
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                  <div *ngIf="email.errors.required">
                     Email is required
                   </div>
-                  <div *ngIf="emailAddress.errors.pattern">
+                  <div *ngIf="email.errors.pattern">
                     Email must be a valid email address format
                   </div>
                 </div>
