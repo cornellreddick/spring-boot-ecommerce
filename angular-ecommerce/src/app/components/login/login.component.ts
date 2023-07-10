@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       el: '#okta-sign-in-widget'},// this name should be the same as the dive tage in login.component.html
       (response: any) => {
         if (response.status === 'SUCCESS') {
-          this.oktaAuth.SignInWithRedirect();
+          this.oktaAuth.signInWithRedirect();
         }
       },
       (error: any) => {

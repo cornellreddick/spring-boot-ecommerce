@@ -12,13 +12,13 @@ export class LoginStatusComponent implements OnInit {
 isAuthenticated: boolean = false;
 userFullName: string = '';
 
-  constructor(oktaAuthService: OktaAuthStateService,
+  constructor(private oktaAuthService: OktaAuthStateService,
   @Inject(OKTA_AUTH) private oktaAuth: OktaAuth) { }
 
   ngOnInit(): void {
 
     // Subscribe to authenticaiton state changes
-    this.OktaAuthStateService.authState$.subscribe(
+    this.oktaAuthService.authState$.subscribe(
       (result) => {
         this.isAuthenticated = result.isAuthenticated!;
         this.getUserDetails();
